@@ -3,10 +3,14 @@
         <h1 class="logo">News App</h1>
         <ul>
             <li><RouterLink to="/" >Home</RouterLink></li>    
-            <li><RouterLink to="/about" >more</RouterLink></li>    
-            <li><RouterLink to="/about" >more</RouterLink></li>    
-            <li><RouterLink to="/about" >more</RouterLink></li>    
-            <li><RouterLink to="/about" >more</RouterLink></li>    
+            <li><RouterLink to="/local" >Local</RouterLink></li>
+            <li><RouterLink to="/" >World</RouterLink></li>
+            <li><RouterLink to="/business" >Bussiness</RouterLink></li>
+            <li><RouterLink to="/" >Technology</RouterLink></li>
+            <li><RouterLink to="/" >Entertainmaint</RouterLink></li>
+            <li><RouterLink to="/" >Sports</RouterLink></li>
+            <li><RouterLink to="/" >Science</RouterLink></li>
+            <li><RouterLink to="/" >Health</RouterLink></li>
         </ul>
         <div class="searchBar">
             <input type="text" v-model="inputVal">
@@ -25,6 +29,7 @@ export default {
         }
     },
     components: { RouterLink },
+    emits: ['getSearchValue'],
     methods: {
         handleSearch() {
             this.$emit('getSearchValue', this.inputVal)
@@ -40,10 +45,9 @@ header {
     top: 0;
     display: flex;
     flex-direction: row;
-    // border: 1px solid red;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 10%;
+    padding: 20px 35px;
     margin-bottom: 20px;
     background-color: #fff;
     border-bottom: 1px solid #ececec;

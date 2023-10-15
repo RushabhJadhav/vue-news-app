@@ -1,13 +1,18 @@
 <template>
-    <Sample />
+    <Headline :regionalCode="regionalCode" />
 </template>
 
 <script>
-import Sample from '../components/Sample.vue';
+import Headline from '../components/Headline.vue';
 
 export default {
+    data() {
+        return {
+            regionalCode: "in"
+        }
+    },
     components: {
-        Sample,
+        Headline,
     }
 }
 </script>

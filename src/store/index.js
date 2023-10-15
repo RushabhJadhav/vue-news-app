@@ -15,18 +15,26 @@ const store = createStore({
         },
         setSearchedNews(state, data) {
             state.headline = data.articles
+        },
+        setCategoryNews(state, data) {
+            state.headline = data.articles
         }
     },
     actions: {
-        fetchNews({commit}) {
-            fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`)
+        fetchNews({commit}, val) {
+            fetch(`https://newsapi.org/v2/top-headlines?country=${val}&apiKey=${apiKey}`)
+            .then(response => response.json())
+            .then(data => commit('setNews', data))
+        },
+        categoryNews({commit}, val) {
+            fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${val}&apiKey=${apiKey}`)
             .then(response => response.json())
             .then(data => commit('setNews', data))
         },
         searchNews({commit}, val) {
             fetch(`https://newsapi.org/v2/everything?q=${val}&apiKey=${apiKey}`)
             .then(response => response.json())
-            .then(data => commit('setSearchedNews', data))
+            .then(data => commit('setCategoryNews', data))
         },
     }
 })

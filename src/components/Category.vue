@@ -1,5 +1,5 @@
 <template>
-    <Header @getSearchValue="testMethod"></Header>
+    <Header @getSearchValue="searchData"></Header>
     <div class="news-cont">
         <div class="news-card" v-for="(item, index) in getNews">
             <h2>{{ item.title }}</h2>
@@ -13,29 +13,28 @@
 </template>
 
 <script>
-import Header from './Header.vue';
+import Header from './Headline.vue';
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
     data() {
         return {
-            count: 0,
-            apiKey: '6e66a5a2bd884fc5ba13195ed5187194',
-            data: '',
             getSearchValue: ''
         }
     },
+    props: ['categoryVal'],
     components: {
         Header,
     },
     mounted() {
-        this.fetchNews()
+        this.categoryNews(this.categoryVal)
+        console.log(this.categoryVal)
     },
     computed: {
         ...mapGetters(['getNews'])
     },
     methods: {
-        ...mapActions(['fetchNews', 'searchNews']),
+        ...mapActions(['categoryNews', 'searchNews']),
         increment() {
             this.count++;
         },
@@ -44,8 +43,7 @@ export default {
                 this.count--;
             }
         },
-        testMethod(val) {
-            // console.log(val)
+        searchData(val) {
             this.searchNews(val)
         }
     }
