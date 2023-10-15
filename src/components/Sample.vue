@@ -1,5 +1,5 @@
 <template>
-    <Header></Header>
+    <Header @getSearchValue="testMethod"></Header>
     <div class="news-cont">
         <div class="news-card" v-for="(item, index) in data">
             <h2>{{ item.title }}</h2>
@@ -20,14 +20,15 @@ export default {
         return {
             count: 0,
             apiKey: '6e66a5a2bd884fc5ba13195ed5187194',
-            data: ''
+            data: '',
+            getSearchValue: ''
         }
     },
     components: {
         Header,
     },
     mounted() {
-        this.callAPI()
+        // this.callAPI()
     },
     methods: {
         increment() {
@@ -38,12 +39,16 @@ export default {
                 this.count--;
             }
         },
-        callAPI() {
-            fetch(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${this.apiKey}`)
+        callAPI(val) {
+            console.log('called')
+            fetch(`https://newsapi.org/v2/everything?q=${val}&apiKey=${this.apiKey}`)
             .then(response => response.json())
             .then(data => {
                 this.data = data.articles
             })
+        },
+        testMethod(val) {
+            this.callAPI(val)
         }
     }
 }
