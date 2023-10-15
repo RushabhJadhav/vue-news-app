@@ -1,12 +1,12 @@
 <template>
     <Header @getSearchValue="testMethod"></Header>
     <div class="news-cont">
-        <div class="news-card" v-for="(item, index) in data">
+        <div class="news-card" v-for="(item, index) in getNews">
             <h2>{{ item.title }}</h2>
             <img class="news-image" :src="item.urlToImage" alt="image not available">
             <p>{{ item.source.name }}</p>
             <p>Published On : {{ item.publishedAt }}</p>
-            <p>Author : {{ item.author }}</p>
+            <p v-if="item.author != null" >Author : {{ item.author }}</p>
             <p>{{ item.description }} <a :href="item.url" target="_blank">read more...</a></p>
         </div>
     </div>
@@ -14,6 +14,7 @@
 
 <script>
 import Header from './Header.vue';
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
     data() {
@@ -28,9 +29,13 @@ export default {
         Header,
     },
     mounted() {
-        // this.callAPI()
+        this.fetchNews()
+    },
+    computed: {
+        ...mapGetters(['getNews'])
     },
     methods: {
+        ...mapActions(['fetchNews', 'searchNews']),
         increment() {
             this.count++;
         },
@@ -39,16 +44,9 @@ export default {
                 this.count--;
             }
         },
-        callAPI(val) {
-            console.log('called')
-            fetch(`https://newsapi.org/v2/everything?q=${val}&apiKey=${this.apiKey}`)
-            .then(response => response.json())
-            .then(data => {
-                this.data = data.articles
-            })
-        },
         testMethod(val) {
-            this.callAPI(val)
+            // console.log(val)
+            this.searchNews(val)
         }
     }
 }
