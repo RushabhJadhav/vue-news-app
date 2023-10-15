@@ -6,7 +6,7 @@
             <li><RouterLink to="/local" >Local</RouterLink></li>
             <li><RouterLink to="/" >World</RouterLink></li>
             <li><RouterLink to="/business" >Bussiness</RouterLink></li>
-            <li><RouterLink to="/" >Technology</RouterLink></li>
+            <li><RouterLink to="/technology" >Technology</RouterLink></li>
             <li><RouterLink to="/" >Entertainmaint</RouterLink></li>
             <li><RouterLink to="/" >Sports</RouterLink></li>
             <li><RouterLink to="/" >Science</RouterLink></li>

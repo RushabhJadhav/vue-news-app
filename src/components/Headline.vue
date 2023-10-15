@@ -28,6 +28,9 @@ export default {
     },
     mounted() {
         this.fetchNews(this.regionalCode)
+            // fetch(`https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=6e66a5a2bd884fc5ba13195ed5187194`)
+            // .then(response => response.json())
+            // .then(data => console.log(data))
     },
     computed: {
         ...mapGetters(['getNews'])
