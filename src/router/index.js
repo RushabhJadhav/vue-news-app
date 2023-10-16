@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../modules/LocalView.vue')
     },
     {
+      path: '/world',
+      name: 'world',
+      component: () => import('../modules/WorldView.vue')
+    },
+    {
       path: '/business',
       name: 'business',
       component: () => import('../modules/BusinessView.vue')
@@ -23,6 +28,26 @@ const router = createRouter({
       path: '/technology',
       name: 'technology',
       component: () => import('../modules/TechnologyView.vue')
+    },
+    {
+      path: '/entertainment',
+      name: 'entertainment',
+      component: () => import('../modules/EntertainmentView.vue')
+    },
+    {
+      path: '/sports',
+      name: 'sports',
+      component: () => import('../modules/SportsView.vue')
+    },
+    {
+      path: '/science',
+      name: 'science',
+      component: () => import('../modules/ScienceView.vue')
+    },
+    {
+      path: '/health',
+      name: 'health',
+      component: () => import('../modules/HealthView.vue')
     }
   ]
 })

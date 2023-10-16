@@ -8,7 +8,7 @@ import Category from '../components/Category.vue';
 export default {
     data() {
         return {
-            categoryVal: "mumbai"
+            categoryVal: "science"
         }
     },
     components: {
