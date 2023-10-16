@@ -51,30 +51,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.news-cont {
-    width: 60%;
-    margin: auto;
-
-    .news-card {
-        // border: 1px solid red;
-
-        h2 {
-            margin: 10px 0 20px 0;
-            text-align: center;
-        }
-
-        p {
-            padding: 10px 0;
-
-            a {
-                text-decoration: none;
-                color: inherit
-            }
-        }
-
-        .news-image {
-            width: 100%;
-        }
-    }
-}
 </style>

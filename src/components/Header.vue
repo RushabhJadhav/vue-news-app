@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="nav-header">
         <h1 class="logo">News App</h1>
         <ul>
             <li><RouterLink to="/" >Home</RouterLink></li>    
@@ -40,36 +40,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 35px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #ececec;
-
-    ul {
-        display: inherit;
-
-        li {
-            list-style-type: none;
-            margin: 0 20px;
-            font-size: 1.2rem;
-
-            a {
-                text-decoration: none;
-                color: black;
-            }
-        }
-    }
-
-    input {
-        height: 30px;
-        width: 300px;
-    }
-}
 </style>
