@@ -11,9 +11,10 @@
             <li><RouterLink to="/sports" >Sports</RouterLink></li>
             <li><RouterLink to="/science" >Science</RouterLink></li>
             <li><RouterLink to="/health" >Health</RouterLink></li>
+            <li><RouterLink to="/source" >Source</RouterLink></li>
         </ul>
         <div class="searchBar">
-            <input type="text" v-model="inputVal">
+            <input type="text" v-model="inputVal" @keypress.enter="handleSearch">
             <font-awesome-icon class="search-icon" icon="fa-solid fa-search" @click="handleSearch" />
         </div>
     </header>

@@ -48,6 +48,11 @@ const router = createRouter({
       path: '/health',
       name: 'health',
       component: () => import('../modules/HealthView.vue')
+    },
+    {
+      path: '/source',
+      name: 'source',
+      component: () => import('../modules/SourceView.vue')
     }
   ]
 })
