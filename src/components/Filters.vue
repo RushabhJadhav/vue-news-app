@@ -32,8 +32,8 @@ export default {
     width: 80%;
     margin: auto;
 
-    input {
+    // input {
         
-    }
+    // }
 }
 </style>

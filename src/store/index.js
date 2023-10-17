@@ -4,10 +4,12 @@ let apiKey = '6e66a5a2bd884fc5ba13195ed5187194';
 
 const store = createStore({
     state: {
-        headline: []
+        headline: [],
+        categoryNews: []
     },
     getters: {
-        getNews: state => state.headline
+        getNews: state => state.headline,
+        getCategoryNews: state => state.categoryNews
     },
     mutations: {
         setNews(state, data) {
@@ -17,7 +19,7 @@ const store = createStore({
             state.headline = data.articles
         },
         setCategoryNews(state, data) {
-            state.headline = data.articles
+            state.categoryNews = data.articles
         }
     },
     actions: {

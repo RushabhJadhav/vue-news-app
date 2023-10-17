@@ -1,5 +1,5 @@
 <template>
-    <header class="nav-header">
+    <header>
         <h1 class="logo"><RouterLink to="/">News App</RouterLink></h1>
         <ul>
             <li><RouterLink to="/" >Home</RouterLink></li>    
@@ -7,7 +7,7 @@
             <li><RouterLink to="/world" >World</RouterLink></li>
             <li><RouterLink to="/business" >Bussiness</RouterLink></li>
             <li><RouterLink to="/technology" >Technology</RouterLink></li>
-            <li><RouterLink to="/entertainment" >Entertainmaint</RouterLink></li>
+            <li><RouterLink to="/entertainment" >Entertainment</RouterLink></li>
             <li><RouterLink to="/sports" >Sports</RouterLink></li>
             <li><RouterLink to="/science" >Science</RouterLink></li>
             <li><RouterLink to="/health" >Health</RouterLink></li>
@@ -33,28 +33,14 @@ export default {
     emits: ['getSearchValue'],
     methods: {
         handleSearch() {
-            this.$emit('getSearchValue', this.inputVal)
-            this.inputVal = ""
+            if(this.inputVal.length !== 0) {
+                this.$emit('getSearchValue', this.inputVal)
+                this.inputVal = ""
+            }
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.searchBar {
-    position: relative;
-
-    input {
-        height: 35px;
-        padding: 0 30px 0 10px;
-        font-size: 1.2rem;
-    }
-
-    .search-icon {
-        position: absolute;
-        right: 3%;
-        bottom: 29%;
-        cursor: pointer;
-    }
-}
 </style>

@@ -1,0 +1,36 @@
+.news-cont {
+    width: 60%;
+    margin: auto;
+    padding: 30px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    hr {
+        margin: 20px 0;
+    }
+  
+    .news-card {
+  
+        h2 {
+            margin: 10px 0 20px 0;
+            text-align: center;
+        }
+  
+        .news-image {
+          border-radius: 10px;
+        }
+  
+        p {
+            padding: 10px 0;
+  
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+        }
+  
+        .news-image {
+            width: 100%;
+        }
+    }
+}
