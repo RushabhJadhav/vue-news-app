@@ -1,13 +1,16 @@
 <template>
     <Header @getSearchValue="searchData"></Header>
-    <div class="news-cont">
+    <div class="category-news-cont">
         <div class="news-card" v-for="(item, index) in getCategoryNews">
-            <img class="news-image" :src="item.urlToImage" alt="image not available">
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.source.name }}</p>
-            <p v-if="item.author != null" >Author : {{ item.author }}</p>
-            <p>{{ item.description }} <a :href="item.url" target="_blank">read more...</a></p>
-            <p>{{ item.publishedAt }}</p>
+            <div class="news-image"></div>
+            <!-- <img class="news-image" :src="item.urlToImage" alt="image not available"> -->
+            <div class="text-cont">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.source.name }}</p>
+                <!-- <p v-if="item.author != null" >Author : {{ item.author }}</p> -->
+                <p>{{ item.description }} <a :href="item.url" target="_blank">Link</a></p>
+                <p>{{ formatDate(item.publishedAt) }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -42,6 +45,10 @@ export default {
         searchData(val) {
             this.searchNews(val)
         },
+        formatDate(val) {
+            let d = new Date(val);
+            return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
+        }
     }
 }
 </script>

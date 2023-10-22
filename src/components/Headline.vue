@@ -1,6 +1,6 @@
 <template>
     <Header @getSearchValue="searchData"></Header>
-    <div class="news-cont">
+    <div v-if="this.$route.path === '/'" class="news-cont">
         <h1>Top Stories</h1>
         <hr>
         <div class="news-card" v-for="(item, index) in getNews">

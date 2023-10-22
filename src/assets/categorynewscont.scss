@@ -1,0 +1,37 @@
+.category-news-cont {
+    width: 60%;
+    margin: auto;
+    padding: 30px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    .news-card {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        // padding-bottom: 10px;
+        margin: 10px 0;
+        border-bottom: 1px solid #e3e3e3;
+        height: 150px;
+
+        .news-image {
+            width: 220px;
+            height: 80%;
+            border-radius: 10px;
+            align-self: flex-start;
+            object-fit: cover;
+        }
+
+        .text-cont {
+            h2 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: .8rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
